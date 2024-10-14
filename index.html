@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Rekening Pembayaran</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+            animation: backgroundAnimation 10s ease infinite;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+            transition: background 0.5s ease;
+        }
+
+        header:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        h1 {
+            font-size: 2.8em;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 2em;
+            text-align: center;
+            color: #00c6ff;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -8px;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: #00c6ff;
+            border-radius: 2px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+        }
+
+        th, td {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        th {
+            background-color: rgba(0, 123, 255, 0.8);
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        tr:hover td {
+            background-color: rgba(0, 123, 255, 0.3);
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        button {
+            background: linear-gradient(135deg, #0072ff, #00c6ff);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 30px auto;
+            cursor: pointer;
+            border-radius: 30px;
+            display: block;
+            font-size: 1.1em;
+            transition: transform 0.3s ease, background 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            transition: transform 0.5s ease;
+        }
+
+        button:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        button:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            th, td {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            button {
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Daftar Rekening</h1>
+    </header>
+    <main>
+        <h2>Metode Pembayaran</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama Bank / E-Wallet</th>
+                    <th>Nomor Rekening</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bank Mandiri</td>
+                    <td>1620007807542</td>
+                </tr>
+                <tr>
+                    <td>SeaBank</td>
+                    <td>901676686794</td>
+                </tr>
+                <tr>
+                    <td>GoPay</td>
+                    <td>085825255971</td>
+                </tr>
+                <tr>
+                    <td>OVO</td>
+                    <td>085825255971</td>
+                </tr>
+                <tr>
+                    <td>Dana</td>
+                    <td>085825255971</td>
+                </tr>
+                <tr>
+                    <td>LinkAja</td>
+                    <td>085825255971</td>
+                </tr>
+                <tr>
+                    <td>ShopeePay</td>
+                    <td>085825255971</td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="window.location.href='https://wa.me/6285825255971'">Hubungi AldiLntk di WhatsApp</button>
+    </main>
+    <footer>
+        <p>© 2024 Daftar Rekening. Semua hak dilindungi.</p>
+    </footer>
+
+</body></html>atsApp</button>
+    </main>
+    <footer>
+        <p>© 2024 Daftar Rekening. Semua hak dilindungi.</p>
+    </footer>
+
+</body></html>

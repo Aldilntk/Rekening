@@ -192,6 +192,16 @@
             0% { opacity: 1; }
             100% { opacity: 0; }
         }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        .blink {
+            animation: blink 1s infinite;
+        }
     </style> 
 </head> 
 <body> 
@@ -242,7 +252,7 @@
                 </tr> 
             </tbody> 
         </table> 
-        <button onclick="window.location.href='https://wa.me/6285825255971'">Hubungi AldiLntk di WhatsApp</button> 
+        <button class="blink" onclick="window.location.href='https://wa.me/6285825255971'">Hubungi AldiLntk di WhatsApp</button> 
     </main> 
     <footer> 
         <p>© 2024 Daftar Rekening. Semua hak dilindungi.</p> 
@@ -253,7 +263,4 @@
         setTimeout(function() {
             var message = document.getElementById('welcomeMessage');
             message.style.display = 'none';
-        }, 8000); // Pesan menghilang setelah 8 detik
-    </script>
-</body>
-</html>
+        }, 8000); // Pesan menghilang setelah 8 det

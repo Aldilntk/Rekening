@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="id"> 
- <head> 
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <title>Daftar Rekening Pembayaran</title> 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"> 
-  <style>
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Daftar Rekening Pembayaran</title> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <style>
+        /* Gaya CSS halaman tetap sama seperti sebelumnya */
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #4e54c8, #8f94fb);
@@ -44,7 +45,7 @@
         }
 
         h2 {
-            margin: 20px 0 0 0; /* Menambah jarak atas sebesar 20px */
+            margin: 20px 0 0 0;
             font-size: 2em;
             text-align: center;
             color: #00c6ff;
@@ -160,56 +161,99 @@
                 padding: 12px 24px;
             }
         }
+
+        /* Gaya untuk pesan notifikasi */
+        .notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, #4e54c8, #8f94fb); /* Menggunakan warna yang serasi */
+            color: #ffffff;
+            padding: 20px 60px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            font-size: 1.4em;
+            max-width: 80%;
+            line-height: 1.5;
+            opacity: 0;
+            font-weight: bold; /* Teks tebal */
+            animation: fadeIn 2s forwards, fadeOut 3s 5s forwards;
+            z-index: 1000;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translate(-50%, -60%); }
+            100% { opacity: 1; transform: translate(-50%, -50%); }
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
     </style> 
- </head> 
- <body> 
-  <header> 
-   <h1>Daftar Rekening</h1> 
-  </header> 
-  <main> 
-   <h2>Metode Pembayaran</h2> 
-   <table> 
-    <thead> 
-     <tr> 
-      <th>Nama Bank / E-Wallet</th> 
-      <th>Nomor Rekening</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td>Bank Mandiri</td> 
-      <td>1620007807542</td> 
-     </tr> 
-     <tr> 
-      <td>SeaBank</td> 
-      <td>901676686794</td> 
-     </tr> 
-     <tr> 
-      <td>GoPay</td> 
-      <td>085825255971</td> 
-     </tr> 
-     <tr> 
-      <td>OVO</td> 
-      <td>085825255971</td> 
-     </tr> 
-     <tr> 
-      <td>Dana</td> 
-      <td>085825255971</td> 
-     </tr> 
-     <tr> 
-      <td>LinkAja</td> 
-      <td>085825255971</td> 
-     </tr> 
-     <tr> 
-      <td>ShopeePay</td> 
-      <td>085825255971</td> 
-     </tr> 
-    </tbody> 
-   </table> 
-   <button onclick="window.location.href='https://wa.me/6285825255971'">Hubungi AldiLntk di WhatsApp</button> 
-  </main> 
-  <footer> 
-   <p>© 2024 Daftar Rekening. Semua hak dilindungi.</p> 
-  </footer> 
- </body>
-               </html>
+</head> 
+<body> 
+    <div class="notification" id="welcomeMessage">
+        Malantangsi anggotae<br><strong>Adakah sedekah?</strong>
+    </div>
+
+    <header> 
+        <h1>Daftar Rekening</h1> 
+    </header> 
+    <main> 
+        <h2>Metode Pembayaran</h2> 
+        <table> 
+            <thead> 
+                <tr> 
+                    <th>Nama Bank / E-Wallet</th> 
+                    <th>Nomor Rekening</th> 
+                </tr> 
+            </thead> 
+            <tbody> 
+                <tr> 
+                    <td>Bank Mandiri</td> 
+                    <td>1620-00-7807542</td>
+                </tr> 
+                <tr> 
+                    <td>SeaBank</td> 
+                    <td>9016-76-686794</td>
+                </tr> 
+                <tr> 
+                    <td>GoPay</td> 
+                    <td>0858-2525-5971</td>
+                </tr> 
+                <tr> 
+                    <td>OVO</td> 
+                    <td>0858-2525-5971</td>
+                </tr> 
+                <tr> 
+                    <td>Dana</td> 
+                    <td>0858-2525-5971</td>
+                </tr> 
+                <tr> 
+                    <td>LinkAja</td> 
+                    <td>0858-2525-5971</td>
+                </tr> 
+                <tr> 
+                    <td>ShopeePay</td> 
+                    <td>0858-2525-5971</td>
+                </tr> 
+            </tbody> 
+        </table> 
+        <button onclick="window.location.href='https://wa.me/6285825255971'">Hubungi AldiLntk di WhatsApp</button> 
+    </main> 
+    <footer> 
+        <p>© 2024 Daftar Rekening. Semua hak dilindungi.</p> 
+    </footer>
+
+    <script>
+        // Menghilangkan pesan setelah beberapa detik
+        setTimeout(function() {
+            var message = document.getElementById('welcomeMessage');
+            message.style.display = 'none';
+        }, 8000); // Pesan menghilang setelah 8 detik
+    </script>
+</body>
+</html>
